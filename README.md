@@ -51,7 +51,8 @@ load_dotenv()
 async def main():
     agent = Agent(
         task="Compare the price of gpt-4o and DeepSeek-V3",
-        llm=ChatOpenAI(model="gpt-4o"),
+       ## llm=ChatOpenAI(model="gpt-4o"),
+          llm=GEMINI_API_KEY(model="gemini-2.0-flash-lite"),
     )
     await agent.run()
 
@@ -208,3 +209,7 @@ If you use Browser Use in your research or project, please cite:
 <div align="center">
 Made with ❤️ in Zurich and San Francisco
  </div>
+
+```bash
+pip install --upgrade google-generativeai
+```
